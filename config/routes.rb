@@ -1,4 +1,5 @@
 SecuredStay::Application.routes.draw do
+  get "landings/index"
   resources :reports do
   #->Prelang (voting/acts_as_votable)
   member do
