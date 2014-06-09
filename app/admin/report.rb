@@ -1,4 +1,5 @@
 ActiveAdmin.register Report do
+  permit_params :id_number, :id_type, :country_code, :activity
 
   
   # See permitted parameters documentation:
