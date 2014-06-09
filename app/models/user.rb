@@ -23,4 +23,5 @@ class User < ActiveRecord::Base
 
 
   validates_formatting_of :ip, using: :ip_address_v4
+  acts_as_votable 
 end
