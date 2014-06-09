@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @report.user %>
+</p>
+
+<p>
+  <strong>Id number:</strong>
+  <%= @report.id_number %>
+</p>
+
+<p>
+  <strong>Id type:</strong>
+  <%= @report.id_type %>
+</p>
+
+<p>
+  <strong>Country code:</strong>
+  <%= @report.country_code %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @report.activity %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>
