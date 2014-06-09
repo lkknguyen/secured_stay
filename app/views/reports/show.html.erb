@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Report -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Report %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @report.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:id_number) %></dt>
+      <dd><pre class="prettyprint"><%= @report.id_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:id_type) %></dt>
+      <dd><pre class="prettyprint"><%= @report.id_type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:country_code) %></dt>
+      <dd><pre class="prettyprint"><%= @report.country_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:activity) %></dt>
+      <dd><pre class="prettyprint"><%= @report.activity %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Id number:</strong>
-  <%= @report.id_number %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              reports_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_report_path(@report), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              report_path(@report),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Id type:</strong>
-  <%= @report.id_type %>
-</p>
-
-<p>
-  <strong>Country code:</strong>
-  <%= @report.country_code %>
-</p>
-
-<p>
-  <strong>Activity:</strong>
-  <%= @report.activity %>
-</p>
-
-<%= link_to 'Edit', edit_report_path(@report) %> |
-<%= link_to 'Back', reports_path %>
